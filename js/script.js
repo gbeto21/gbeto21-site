@@ -39,4 +39,10 @@ $(document).ready(function () {
         }
     })
 
+    $(function() {
+        $('.chart').easyPieChart({
+            //your options goes here
+        });
+    });
+
 })
