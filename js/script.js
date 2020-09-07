@@ -6,7 +6,16 @@ $(document).ready(function () {
     })
 
     var typed = new Typed(".typed", {
-        strings: ["Software Engineer.", "Web Developer.", "Guitar player."],
+        strings: [
+            "Software Engineer.", 
+            "Web Developer.", 
+            ".Net WPF.",
+            "SQL Server.",
+            "Mongoose.",
+            "Express.js.",
+            "React.js.",
+            "Angular.js"
+        ],
         typeSpeed: 70,
         loop: true,
         startDelay: 1000,
