@@ -70,4 +70,7 @@ $(document).ready(function () {
             caountUpFinished = true
         }
     })
+
+    $("[data-fancybox]").fancybox()
+
 })
