@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
 import { NavComponent } from "./components/nav/nav.component";
-import { SkillsComponent } from "./components/skills/skills.component";
 
 const routes: Routes = [
   {
@@ -11,7 +9,7 @@ const routes: Routes = [
     children: [
       {
         path: 'skills',
-        component: SkillsComponent
+        loadChildren: () => import('./skills/skills.module').then(m => m.SkillsModule)
       }
     ]
   }
