@@ -1,0 +1,23 @@
+.center-container {
+  width: 80%;
+  margin: 1rem auto;
+  border-style: solid;
+  border-color: 1px red !important;
+}
+
+:host {
+  display: block;
+  margin-top: 1rem;
+}
+
+mat-spinner{
+  margin: auto;
+}
+
+mat-paginator {
+  margin-top: 1rem;
+}
+
+.info-text{
+  text-align: center;
+}
