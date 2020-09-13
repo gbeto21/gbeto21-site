@@ -1,29 +1,23 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
-import { FormControl, Validators } from "@angular/forms";
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { TYPE_ADMIN } from "../../../core/enums/TYPE_ADMIN";
+import { Skill } from "../../../core/models/skill.model";
+import { Router } from "@angular/router";
 
 @Component({
-  selector: 'app-create',
+  selector: 'admin-skill',
   templateUrl: './admin-skill.component.html',
   styleUrls: ['./admin-skill.component.css']
 })
 export class AdminSkillComponent implements OnInit {
 
   type_admin: TYPE_ADMIN
-  emailField: FormControl
+  skill: Skill
+  form: FormGroup
 
-  constructor(private route: ActivatedRoute) {
-    this.emailField = new FormControl('', [
-      Validators.minLength(4),
-      Validators.maxLength(10)
-    ])
-
-    this.emailField.valueChanges
-      .subscribe(value => {
-        console.log(value);
-
-      })
+  constructor(private route: ActivatedRoute, private formBuilder: FormBuilder, private router: Router) {
+    this.buildForm()
   }
 
   ngOnInit(): void {
@@ -35,6 +29,25 @@ export class AdminSkillComponent implements OnInit {
       else {
         this.type_admin = TYPE_ADMIN.CREATE
       }
+    })
+  }
+
+  saveSkill(event: Event) {
+    event.preventDefault
+
+    if (this.form.invalid) {
+      return
+    }
+
+    const skill = this.form.value
+    this.router.navigate(['./admin/skills'])
+  }
+
+  private buildForm() {
+    this.form = this.formBuilder.group({
+      name: ['', [Validators.required]],
+      description: ['', [Validators.required]],
+      percent: [0, [Validators.required]]
     })
   }
 

@@ -1,8 +1,33 @@
-<h5>Admin skills works!</h5>
-<!--
-<mat-form-field>
-  <input matInput placeholder="name" type="text">
-</mat-form-field> -->
-<mat-form-field>
-  <input [formControl]="emailField" matInput placeholder="email" type="text">
-</mat-form-field>
+<form [formGroup]="form" (ngSubmit)="saveSkill($event)">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Skill</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="row">
+        <div class="col-md-7">
+          <mat-form-field>
+            <input placeholder="name" formControlName="name" matInput type="text">
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-7">
+          <mat-form-field>
+            <textarea placeholder="description" formControlName="description" matInput></textarea>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-7">
+          <mat-form-field>
+            <input placeholder="percent" formControlName="percent" matInput type="number">
+          </mat-form-field>
+        </div>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button type="submit">Guardar</button>
+    </mat-card-actions>
+  </mat-card>
+</form>
