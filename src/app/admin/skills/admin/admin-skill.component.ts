@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
+import { FormControl } from "@angular/forms";
 
 @Component({
   selector: 'app-create',
-  templateUrl: './admin.component.html',
-  styleUrls: ['./admin.component.css']
+  templateUrl: './admin-skill.component.html',
+  styleUrls: ['./admin-skill.component.css']
 })
-export class AdminComponent implements OnInit {
+export class AdminSkillComponent implements OnInit {
 
   constructor(private route: ActivatedRoute) { }
 

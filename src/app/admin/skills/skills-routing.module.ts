@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { SkillsComponent } from "./skills/skills.component";
-import { AdminComponent } from "./admin/admin.component";
+import { AdminSkillComponent } from "./admin/admin-skill.component";
 import { DetailsComponent } from "./details/details.component";
 
 const routes: Routes = [
@@ -14,7 +14,7 @@ const routes: Routes = [
       },
       {
         path: 'create',
-        component: AdminComponent
+        component: AdminSkillComponent
       },
       {
         path: 'details/:id',
@@ -22,7 +22,7 @@ const routes: Routes = [
       },
       {
         path: 'edit/:id',
-        component: AdminComponent
+        component: AdminSkillComponent
       }
     ]
   },
