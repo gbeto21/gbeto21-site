@@ -4,14 +4,17 @@ import { MaterialModule } from "../../material/material.module";
 
 import { SkillsRoutingModule } from './skills-routing.module';
 import { SkillsComponent } from "./skills/skills.component";
+import { AdminSkillComponent } from "./admin/admin-skill.component";
 import { DetailsComponent } from './details/details.component';
+import { ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
-  declarations: [SkillsComponent, DetailsComponent],
+  declarations: [AdminSkillComponent, SkillsComponent, DetailsComponent],
   imports: [
     CommonModule,
     SkillsRoutingModule,
-    MaterialModule
+    MaterialModule,
+    ReactiveFormsModule
   ]
 })
 export class SkillsModule { }
