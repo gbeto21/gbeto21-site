@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { FormControl, Validators } from "@angular/forms";
+import { TYPE_ADMIN } from "../../../core/enums/TYPE_ADMIN";
 
 @Component({
   selector: 'app-create',
@@ -9,6 +10,7 @@ import { FormControl, Validators } from "@angular/forms";
 })
 export class AdminSkillComponent implements OnInit {
 
+  type_admin: TYPE_ADMIN
   emailField: FormControl
 
   constructor(private route: ActivatedRoute) {
@@ -28,10 +30,10 @@ export class AdminSkillComponent implements OnInit {
     this.route.params.subscribe((params: Params) => {
       const id = params.id
       if (id) {
-        alert(id)
+        this.type_admin = TYPE_ADMIN.EDIT
       }
       else {
-        alert("No id.")
+        this.type_admin = TYPE_ADMIN.CREATE
       }
     })
   }
