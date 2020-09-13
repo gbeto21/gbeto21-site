@@ -8,6 +8,8 @@ import { LayoutComponent } from './layout/layout.component';
 import { AppRoutingModule } from './app-routing.module';
 
 import { CoreModule } from "./core/core.module";
+import { GraphQLModule } from './graphql.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -18,9 +20,11 @@ import { CoreModule } from "./core/core.module";
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    CoreModule
+    CoreModule,
+    GraphQLModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [GraphQLModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

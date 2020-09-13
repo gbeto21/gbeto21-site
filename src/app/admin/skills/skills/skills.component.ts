@@ -9,8 +9,8 @@ import { SkillsService } from "../../../core/services/skills/skills.service";
 export class SkillsComponent implements OnInit {
 
   skills = [
-    { id: '1', name: 'JavaScript', description: 'An common language.', percent: 25 },
-    { id: '2', name: 'Flask', description: 'An popular Framework.', percent: 15 }
+    // { id: '1', name: 'JavaScript', description: 'An common language.', percent: 25 },
+    // { id: '2', name: 'Flask', description: 'An popular Framework.', percent: 15 }
   ]
   isLoading = false
   displayedColumns: string[] = ['name', 'description', 'percent', 'actions'];
