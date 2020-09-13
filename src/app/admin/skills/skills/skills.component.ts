@@ -8,10 +8,7 @@ import { SkillsService } from "../../../core/services/skills/skills.service";
 })
 export class SkillsComponent implements OnInit {
 
-  skills = [
-    { id: '1', name: 'JavaScript', description: 'An common language.', percent: 25 },
-    { id: '2', name: 'Flask', description: 'An popular Framework.', percent: 15 }
-  ]
+  skills = []
   isLoading = false
   displayedColumns: string[] = ['name', 'description', 'percent', 'actions'];
 
@@ -27,7 +24,10 @@ export class SkillsComponent implements OnInit {
   }
 
   fetchSkills() {
-    this.skills = this.skillService.getSkills()
+    this.skillService
+      .getSkills()
+      .subscribe(response => {
+        this.skills = response.data.skills
+      })
   }
-
 }

@@ -1,19 +1,29 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from "@angular/common/http";
 
 @Injectable({
   providedIn: 'root'
 })
 export class SkillsService {
 
-  skills = [
-    { id: '1', name: 'JavaScript', description: 'An common language.', percent: 25 },
-    { id: '2', name: 'Flask', description: 'An popular Framework.', percent: 15 }
-  ]
+  skills = []
 
-  constructor() { }
+  constructor(
+    private http: HttpClient
+  ) { }
 
   getSkills() {
-    return this.skills
+
+    return this.http.post<any>
+      ('http://localhost:5000/graphql/',
+        {
+          "query": `query{ skills {
+            _id
+            name
+            description
+            percent
+          }}`
+        })
   }
 
   getSkill(id: string) {
