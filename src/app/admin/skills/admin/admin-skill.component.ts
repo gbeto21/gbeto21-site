@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { TYPE_ADMIN } from "../../../core/enums/TYPE_ADMIN";
 import { Skill } from "../../../core/models/skill.model";
 import { Router } from "@angular/router";
+import { SkillsService } from 'src/app/core/services/skills/skills.service';
 
 @Component({
   selector: 'admin-skill',
@@ -16,7 +17,11 @@ export class AdminSkillComponent implements OnInit {
   skill: Skill
   form: FormGroup
 
-  constructor(private route: ActivatedRoute, private formBuilder: FormBuilder, private router: Router) {
+  constructor(
+    private skillService: SkillsService,
+    private route: ActivatedRoute,
+    private formBuilder: FormBuilder,
+    private router: Router) {
     this.buildForm()
   }
 
@@ -39,8 +44,11 @@ export class AdminSkillComponent implements OnInit {
       return
     }
 
-    const skill = this.form.value
-    this.router.navigate(['./admin/skills'])
+    let result = TYPE_ADMIN.CREATE ? this.skillService.createSkill(this.form.value) : null
+    result.subscribe(response=>{
+      console.log(response);
+      this.router.navigate(['./admin/skills'])
+    })
   }
 
   private buildForm() {
