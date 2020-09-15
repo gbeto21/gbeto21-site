@@ -32,8 +32,8 @@ export class AdminStatisticComponent implements OnInit {
       const id = params.id
       if (id) {
         this.type_admin = TYPE_ADMIN.EDIT
-        // this.statistic = this.statisticService.getStatistic(id)
-        // this.form.patchValue(this.statistic)
+        this.statistic = this.statisticService.getStatistic(id)
+        this.form.patchValue(this.statistic)
       }
       else {
         this.type_admin = TYPE_ADMIN.CREATE
@@ -57,12 +57,15 @@ export class AdminStatisticComponent implements OnInit {
     this.saveStatisticDataBase()
   }
 
-  saveStatisticDataBase(){
+  saveStatisticDataBase() {
     let result
-    if(this.type_admin===TYPE_ADMIN.CREATE){
+    if (this.type_admin === TYPE_ADMIN.CREATE) {
       result = this.statisticService.createStatistic(this.form.value)
     }
-    result.subscribe(response=>{
+    if (this.type_admin === TYPE_ADMIN.EDIT) {
+      result = this.statisticService.updateStatistic(this.statistic._id, this.form.value)
+    }
+    result.subscribe(response => {
       this.router.navigate(['./admin/statistics'])
     })
   }

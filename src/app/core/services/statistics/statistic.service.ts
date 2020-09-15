@@ -26,6 +26,10 @@ export class StatisticService {
     })
   }
 
+  getStatistic(id: string) {
+    return StatisticService.statistics.find(st => st._id === id)
+  }
+
   createStatistic(statistic: Statistic) {
     return this.http.post<any>(URL, {
       "query": `mutation{
@@ -40,6 +44,19 @@ export class StatisticService {
             icon
           }
       }`})
+  }
+
+  updateStatistic(_id: string, statistic: Statistic) {
+    return this.http.post<any>(URL, {
+      "query": `mutation{
+        updateStatistic(statisticInput: {_id: "${_id}", name:"${statistic.name}", value:${statistic.value}, icon:"${statistic.icon}"}) {
+          _id
+          name
+          value
+          icon
+        }
+      }`
+    })
   }
 
 }
