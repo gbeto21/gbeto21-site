@@ -1,0 +1,33 @@
+<form [formGroup]="form" (ngSubmit)="saveStatistic($event)">
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Statistic</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="row">
+      <div class="col-md-7">
+        <mat-form-field>
+          <input placeholder="Name" formControlName="name" matInput type="text">
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-7">
+        <mat-form-field>
+          <input placeholder="Value" formControlName="value" matInput type="number">
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-7">
+        <mat-form-field>
+          <input placeholder="Icon" formControlName="icon" matInput type="text">
+        </mat-form-field>
+      </div>
+    </div>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button type="submit">Guardar</button>
+  </mat-card-actions>
+</mat-card>
+</form>

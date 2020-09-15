@@ -26,4 +26,20 @@ export class StatisticService {
     })
   }
 
+  createStatistic(statistic: Statistic) {
+    return this.http.post<any>(URL, {
+      "query": `mutation{
+        createStatistic(
+          statisticInput:
+          {
+            name:"${statistic.name}", value: ${statistic.value}, icon: "${statistic.icon}"
+          }
+          ),{
+            name
+            value
+            icon
+          }
+      }`})
+  }
+
 }

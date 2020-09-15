@@ -5,10 +5,11 @@ import { ReactiveFormsModule} from '@angular/forms';
 import { MaterialModule } from "../../material/material.module";
 import { StatisticsRoutingModule } from './statistics-routing.module';
 import { StatisticsComponent } from './statistics/statistics.component';
+import { AdminStatisticComponent } from './admin-statistic/admin-statistic.component';
 
 
 @NgModule({
-  declarations: [StatisticsComponent],
+  declarations: [StatisticsComponent, AdminStatisticComponent],
   imports: [
     CommonModule,
     StatisticsRoutingModule,
