@@ -63,4 +63,14 @@ export class SkillsService {
     }`})
   }
 
+  deleteSkill(id: string) {
+    return this.http.post<any>(URL, {
+      "query": `mutation {
+    deleteSkill(_id: "${id}") {
+      name
+    }
+  }`
+    })
+  }
+
 }

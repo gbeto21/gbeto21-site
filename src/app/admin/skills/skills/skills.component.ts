@@ -19,8 +19,15 @@ export class SkillsComponent implements OnInit {
   }
 
   onDelete(skillId: string) {
-    alert('An delete action has been pressed. ' + skillId)
-    this.isLoading = true
+
+    let skillDelete = this.skills.find(sk => sk._id === skillId)
+    if (confirm(`Are sure you want to delete the skill: ${skillDelete.name}`)) {
+      this.skillService
+        .deleteSkill(skillDelete._id)
+        .subscribe(res => {
+          this.fetchSkills()
+        })
+    }
   }
 
   fetchSkills() {
