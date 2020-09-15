@@ -30,7 +30,7 @@ export class SkillsComponent implements OnInit {
     }
   }
 
-  fetchSkills() {
+  private fetchSkills() {
     this.skillService
       .getSkills()
       .subscribe(response => {

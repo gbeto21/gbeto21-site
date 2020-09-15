@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from "@angular/forms";
-import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
+import { HttpClientModule } from "@angular/common/http";
 
 import { SkillsService } from "./services/skills/skills.service";
-
+import { StatisticService } from "./services/statistics/statistic.service";
 
 @NgModule({
   declarations: [],
@@ -14,7 +14,8 @@ import { SkillsService } from "./services/skills/skills.service";
     HttpClientModule
   ],
   providers: [
-    SkillsService
+    SkillsService,
+    StatisticService
   ]
 })
 export class CoreModule { }
