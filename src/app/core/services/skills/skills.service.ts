@@ -10,14 +10,13 @@ const URL = `${environment.apiUrl}/graphql`
 })
 export class SkillsService {
 
-  skills = []
+  public static skills = []
 
   constructor(
     private http: HttpClient
   ) { }
 
   getSkills() {
-
     return this.http.post<any>
       (URL,
         {
@@ -30,8 +29,22 @@ export class SkillsService {
         })
   }
 
+  updateSkill(_id: string, skill: Skill) {
+    return this.http.post<any>(URL,
+      {
+        "query": `mutation {
+          updateSkill(skillInput: {_id: "${_id}", name: "${skill.name}", description: "${skill.description}", percent: ${skill.percent}}) {
+            _id
+            name
+            description
+            percent
+          }
+        }`
+      })
+  }
+
   getSkill(id: string) {
-    return this.skills.find(sk => sk.id === id)
+    return SkillsService.skills.find(sk => sk._id === id)
   }
 
   createSkill(skill: Skill) {

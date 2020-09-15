@@ -28,6 +28,7 @@ export class SkillsComponent implements OnInit {
       .getSkills()
       .subscribe(response => {
         this.skills = response.data.skills
+        SkillsService.skills = this.skills
       })
   }
 }

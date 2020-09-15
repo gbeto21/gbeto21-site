@@ -30,6 +30,8 @@ export class AdminSkillComponent implements OnInit {
       const id = params.id
       if (id) {
         this.type_admin = TYPE_ADMIN.EDIT
+        this.skill = this.skillService.getSkill(id)
+        this.form.patchValue(this.skill)
       }
       else {
         this.type_admin = TYPE_ADMIN.CREATE
@@ -44,9 +46,19 @@ export class AdminSkillComponent implements OnInit {
       return
     }
 
-    let result = TYPE_ADMIN.CREATE ? this.skillService.createSkill(this.form.value) : null
-    result.subscribe(response=>{
-      console.log(response);
+    this.saveSkillDataBase()
+
+  }
+
+  private saveSkillDataBase() {
+    let result
+    if (this.type_admin === TYPE_ADMIN.CREATE) {
+      result = this.skillService.createSkill(this.form.value)
+    }
+    if (this.type_admin === TYPE_ADMIN.EDIT) {
+      result = this.skillService.updateSkill(this.skill._id, this.form.value)
+    }
+    result.subscribe(response => {
       this.router.navigate(['./admin/skills'])
     })
   }
