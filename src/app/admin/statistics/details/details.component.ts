@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 
-import { SkillsService } from "../../../core/services/skills/skills.service";
+import { StatisticService } from 'src/app/core/services/statistics/statistic.service';
+
 
 @Component({
   selector: 'app-details',
@@ -10,18 +11,21 @@ import { SkillsService } from "../../../core/services/skills/skills.service";
 })
 export class DetailsComponent implements OnInit {
 
-  skill
+  statistic
 
-  constructor(private skillService: SkillsService, private route: ActivatedRoute) { }
+  constructor(
+    private statisticService: StatisticService,
+    private route: ActivatedRoute
+  ) { }
 
   ngOnInit(): void {
     this.route.params.subscribe((params: Params) => {
-      this.fetchSkill(params.id)
+      this.fetchStatistic(params.id)
     })
   }
 
-  fetchSkill(id: string) {
-    this.skill = this.skillService.getSkill(id)
+  fetchStatistic(id: string) {
+    this.statistic = this.statisticService.getStatistic(id)
   }
 
 }

@@ -31,7 +31,7 @@ export class StatisticsComponent implements OnInit {
 
   private fetchStatistics() {
     this.statisticService
-      .getSkills()
+      .getStatistics()
       .subscribe(response => {
         this.statistics = response.data.statistics
         StatisticService.statistics = this.statistics

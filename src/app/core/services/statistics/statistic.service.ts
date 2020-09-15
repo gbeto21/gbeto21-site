@@ -15,7 +15,7 @@ export class StatisticService {
 
   constructor(private http: HttpClient) { }
 
-  getSkills() {
+  getStatistics() {
     return this.http.post<any>(URL, {
       "query": `query{ statistics {
         _id

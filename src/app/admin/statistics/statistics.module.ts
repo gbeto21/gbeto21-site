@@ -6,10 +6,11 @@ import { MaterialModule } from "../../material/material.module";
 import { StatisticsRoutingModule } from './statistics-routing.module';
 import { StatisticsComponent } from './statistics/statistics.component';
 import { AdminStatisticComponent } from './admin-statistic/admin-statistic.component';
+import { DetailsComponent } from './details/details.component';
 
 
 @NgModule({
-  declarations: [StatisticsComponent, AdminStatisticComponent],
+  declarations: [StatisticsComponent, AdminStatisticComponent, DetailsComponent],
   imports: [
     CommonModule,
     StatisticsRoutingModule,

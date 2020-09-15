@@ -1,0 +1,10 @@
+<a mat-button color="primary" routerLink="/admin/statistics">Atras</a>
+<div *ngIf="statistic">
+  <div>
+    <ul>
+      <li>Name: {{statistic.name}}</li>
+      <li>Value: {{statistic.value}}</li>
+      <li>Icon: {{statistic.icon}}</li>
+    </ul>
+  </div>
+</div>
