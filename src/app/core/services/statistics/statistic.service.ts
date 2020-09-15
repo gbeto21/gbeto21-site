@@ -59,4 +59,13 @@ export class StatisticService {
     })
   }
 
+  deleteStatistic(id: string){
+    return this.http.post<any>(URL, {
+      "query": `mutation {deleteStatistic(_id:"${id}"){
+        name
+      }
+    }`
+    })
+  }
+
 }

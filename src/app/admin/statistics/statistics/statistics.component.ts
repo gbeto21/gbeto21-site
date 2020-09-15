@@ -19,8 +19,14 @@ export class StatisticsComponent implements OnInit {
   }
 
   onDelete(statisticId: string) {
-    console.log('Delete');
-    console.log(statisticId);
+    let statisticDelete = this.statistics.find(st => st._id === statisticId)
+    if (confirm(`Are sure you want to delete the statistic: ${statisticDelete.name}`)) {
+      this.statisticService
+        .deleteStatistic(statisticDelete._id)
+        .subscribe(res => {
+          this.fetchStatistics()
+        })
+    }
   }
 
   private fetchStatistics() {
