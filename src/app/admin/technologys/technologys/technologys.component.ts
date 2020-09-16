@@ -24,7 +24,7 @@ export class TechnologysComponent implements OnInit {
 
   private fetchTechnologys() {
     this.technologyService
-      .getStatistics()
+      .getTechnologys()
       .subscribe(response => {
         this.technologys = response.data.technologys
         TechnologyService.technologys = this.technologys

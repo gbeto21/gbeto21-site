@@ -14,13 +14,36 @@ export class TechnologyService {
 
   constructor(private http: HttpClient) { }
 
-  getStatistics() {
+  getTechnologys() {
     return this.http.post<any>(URL, {
       "query": `query{ technologys {
         _id
         name
       }}`
     })
+  }
+
+  getTechnology(id: string) {
+    return TechnologyService.technologys.find(tch => tch._id === id)
+  }
+
+  createTechnology(technology: Technology) {
+    return this.http.post<any>(URL, {
+      "query": `mutation {
+        createTechnology(
+          technologyInput: {
+            name: "${technology.name}"
+          }
+        ),{
+          _id
+          name
+        }
+      }`
+    })
+  }
+
+  updateStkill(_id: string, technology: Technology) {
+
   }
 
 }
