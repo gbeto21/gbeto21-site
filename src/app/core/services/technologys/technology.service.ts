@@ -53,4 +53,13 @@ export class TechnologyService {
     })
   }
 
+  deleteTechnology(id: string) {
+    return this.http.post<any>(URL, {
+      "query": `mutation {deleteTechnology(_id:"${id}"){
+          name
+        }
+      }`
+    })
+  }
+
 }

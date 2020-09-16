@@ -18,8 +18,15 @@ export class TechnologysComponent implements OnInit {
     this.fetchTechnologys()
   }
 
-  onDelete(event: Event){
-
+  onDelete(technologyId: string) {
+    let technologyDelete = this.technologys.find(tch => tch._id === technologyId)
+    if (confirm(`Are sure you want to delete the technology: ${technologyDelete.name}`)) {
+      this.technologyService
+        .deleteTechnology(technologyDelete._id)
+        .subscribe(res => {
+          this.fetchTechnologys()
+        })
+    }
   }
 
   private fetchTechnologys() {
