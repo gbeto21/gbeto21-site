@@ -54,6 +54,9 @@ export class AdminTechnologyComponent implements OnInit {
     if (this.type_admin === TYPE_ADMIN.CREATE) {
       result = this.technologyService.createTechnology(this.form.value)
     }
+    if (this.type_admin === TYPE_ADMIN.EDIT) {
+      result = this.technologyService.updateTechnology(this.technology._id, this.form.value)
+    }
     result.subscribe(response => {
       this.router.navigate(['./admin/technologys'])
     })

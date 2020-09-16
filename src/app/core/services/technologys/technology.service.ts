@@ -42,8 +42,15 @@ export class TechnologyService {
     })
   }
 
-  updateStkill(_id: string, technology: Technology) {
-
+  updateTechnology(_id: string, technology: Technology) {
+    return this.http.post<any>(URL, {
+      "query": `mutation {
+        updateTechnology(technologyInput: {_id: "${_id}", name: "${technology.name}"}){
+          _id
+          name
+        }
+      }`
+    })
   }
 
 }
