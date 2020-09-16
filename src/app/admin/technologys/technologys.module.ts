@@ -6,10 +6,11 @@ import { MaterialModule } from "../../material/material.module";
 import { TechnologysRoutingModule } from './technologys-routing.module';
 import { TechnologysComponent } from './technologys/technologys.component';
 import { AdminTechnologyComponent } from './admin-technology/admin-technology.component';
+import { DetailsComponent } from './details/details.component';
 
 
 @NgModule({
-  declarations: [TechnologysComponent, AdminTechnologyComponent],
+  declarations: [TechnologysComponent, AdminTechnologyComponent, DetailsComponent],
   imports: [
     CommonModule,
     TechnologysRoutingModule,

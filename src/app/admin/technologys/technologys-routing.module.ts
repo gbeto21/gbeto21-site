@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { TechnologysComponent } from "./technologys/technologys.component";
 import { AdminTechnologyComponent } from "./admin-technology/admin-technology.component";
+import { DetailsComponent } from "./details/details.component";
 
 const routes: Routes = [
   {
@@ -15,6 +16,10 @@ const routes: Routes = [
       {
         path: 'create',
         component: AdminTechnologyComponent
+      },
+      {
+        path: 'details/:id',
+        component: DetailsComponent
       },
       {
         path: 'edit/:id',
