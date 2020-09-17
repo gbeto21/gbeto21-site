@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
-import { Technology } from "../../models/technology.model";
+
 import { environment } from 'src/environments/environment';
 
 import { Type } from "../../models/type.model";
@@ -22,6 +22,21 @@ export class TypesService {
         _id
         name
       }}`
+    })
+  }
+
+  createType(type: Type) {
+    return this.http.post<any>(URL, {
+      "query": `mutation {
+        createType(
+          typeInput: {
+            name: "${type.name}"
+          }
+        ),{
+          _id
+          name
+        }
+      }`
     })
   }
 
