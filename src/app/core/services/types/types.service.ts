@@ -25,6 +25,10 @@ export class TypesService {
     })
   }
 
+  getType(id: string) {
+    return TypesService.types.find(ty => ty._id === id)
+  }
+
   createType(type: Type) {
     return this.http.post<any>(URL, {
       "query": `mutation {
