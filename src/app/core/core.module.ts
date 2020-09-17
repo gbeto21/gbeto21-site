@@ -6,6 +6,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { SkillsService } from "./services/skills/skills.service";
 import { StatisticService } from "./services/statistics/statistic.service";
 import { TechnologyService } from "./services/technologys/technology.service";
+import { TypesService } from './services/types/types.service';
 
 @NgModule({
   declarations: [],
@@ -17,7 +18,8 @@ import { TechnologyService } from "./services/technologys/technology.service";
   providers: [
     SkillsService,
     StatisticService,
-    TechnologyService
+    TechnologyService,
+    TypesService
   ]
 })
 export class CoreModule { }
