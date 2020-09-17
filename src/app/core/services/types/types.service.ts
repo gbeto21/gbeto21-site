@@ -44,4 +44,15 @@ export class TypesService {
     })
   }
 
+  updateType(_id: string, type: Type) {
+    return this.http.post<any>(URL, {
+      "query": `mutation {
+        updateType(typeInput: {_id: "${_id}", name: "${type.name}"}){
+          _id
+          name
+        }
+      }`
+    })
+  }
+
 }

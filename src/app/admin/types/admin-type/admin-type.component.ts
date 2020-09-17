@@ -32,8 +32,8 @@ export class AdminTypeComponent implements OnInit {
       const id = params.id
       if (id) {
         this.type_admin = TYPE_ADMIN.EDIT
-        // this.type = this.typeService.getType(id)
-        // this.form.patchValue(this.type)
+        this.type = this.typeService.getType(id)
+        this.form.patchValue(this.type)
       }
       else {
         this.type_admin = TYPE_ADMIN.CREATE
@@ -55,7 +55,7 @@ export class AdminTypeComponent implements OnInit {
       result = this.typeService.createType(this.form.value)
     }
     if (this.type_admin === TYPE_ADMIN.EDIT) {
-      //result = this.typeService.updateType(this.type._id, this.form.value)
+      result = this.typeService.updateType(this.type._id, this.form.value)
     }
     result.subscribe(response => {
       this.router.navigate(['./admin/types'])
