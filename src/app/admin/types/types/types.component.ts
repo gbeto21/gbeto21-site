@@ -19,8 +19,15 @@ export class TypesComponent implements OnInit {
     this.fetchTypes()
   }
 
-  onDelete(event: Event){
-
+  onDelete(skillId: string){
+    let typeDelete = this.types.find(sk => sk._id === skillId)
+    if (confirm(`Are sure you want to delete the type: ${typeDelete.name}`)) {
+      this.typeService
+        .deleteType(typeDelete._id)
+        .subscribe(res => {
+          this.fetchTypes()
+        })
+    }
   }
 
   private fetchTypes() {

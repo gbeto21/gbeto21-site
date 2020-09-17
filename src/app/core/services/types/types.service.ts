@@ -55,4 +55,13 @@ export class TypesService {
     })
   }
 
+  deleteType(id: string) {
+    return this.http.post<any>(URL, {
+      "query": `mutation {deleteType(_id:"${id}"){
+          name
+        }
+      }`
+    })
+  }
+
 }
