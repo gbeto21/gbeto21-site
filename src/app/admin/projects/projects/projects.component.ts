@@ -18,8 +18,15 @@ export class ProjectsComponent implements OnInit {
     this.fetchProjects()
   }
 
-  onDelete(id: string){
-
+  onDelete(id: string) {
+    let projectDelete = this.projects.find(tch => tch._id === id)
+    if (confirm(`Are sure you want to delete the project: ${projectDelete.name}`)) {
+      this.projectService
+        .deleteProject(projectDelete._id)
+        .subscribe(res => {
+          this.fetchProjects()
+        })
+    }
   }
 
   private fetchProjects() {

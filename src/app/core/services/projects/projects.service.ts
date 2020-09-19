@@ -72,6 +72,16 @@ export class ProjectsService {
     return this.http.post<any>(URL, postData)
   }
 
+  deleteProject(id: string) {
+    return this.http.post<any>(URL, {
+      "query": `mutation {
+        deleteProject(_id: "${id}") {
+      name
+    }
+  }`
+    })
+  }
+
   private createTechnologyInput(technologys: Technology[]) {
     let inputTechnologys: string[] = []
     technologys.map(tech => {
