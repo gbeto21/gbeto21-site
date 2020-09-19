@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class AuthService {
 
-  private token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1ZjVmNTllYTExZDFhNjU1YWM2OGQwNDUiLCJlbWFpbCI6ImR1bW15QGR1bW15LmNvbSIsImlhdCI6MTYwMDM0NDAyOCwiZXhwIjoxNjAwNDMwNDI4fQ.B-Kjb9shkeOrM9P4MQgEMBt_-MwB9csudpiB-ihwOY4"
+  private token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1ZjVmNTllYTExZDFhNjU1YWM2OGQwNDUiLCJlbWFpbCI6ImR1bW15QGR1bW15LmNvbSIsImlhdCI6MTYwMDQyNzczNywiZXhwIjoxNjAwNTE0MTM3fQ.kOsI74mDV0AbCYBhazB88dwegaS6AP1dDMmNobfOGWQ"
 
   constructor() { }
 
