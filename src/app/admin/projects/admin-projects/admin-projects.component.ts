@@ -64,21 +64,12 @@ export class AdminProjectsComponent implements OnInit {
     this.filteredTechnologys = this.technologyCtrl.valueChanges.pipe(
       //startWith(null),
       map((Tech: string | null) => Tech ? this._filter(Tech) : this.technologys.slice()));
-    console.log("Filtered technologys");
-    console.log(this.filteredTechnologys);
   }
 
   private _filter(value: string): Technology[] {
-
-    // console.log("Filter");
-    // console.log(value);
-
     const filterValue = value.toLowerCase();
     let result = this.technologys.filter(tech => tech.name.toLowerCase().indexOf(filterValue) === 0);
-    // console.log("Result");
-    // console.log(result);
     return result
-
   }
 
   saveProject(event: Event) {
@@ -138,8 +129,9 @@ export class AdminProjectsComponent implements OnInit {
       const id = params.id
       if (id) {
         this.type_admin = TYPE_ADMIN.EDIT
-        // this.skill = this.skillService.getSkill(id)
-        // this.form.patchValue(this.skill)
+        this.project = this.projectService.getProject(id)
+        this.form.patchValue(this.project)
+        this.imagePreview = this.project.image
       }
       else {
         this.type_admin = TYPE_ADMIN.CREATE
@@ -159,8 +151,10 @@ export class AdminProjectsComponent implements OnInit {
   private saveProjectDataBase() {
     let result
     if (this.type_admin === TYPE_ADMIN.CREATE) {
-      console.log(this.form.value);
       result = this.projectService.createProject(this.form.value, this.project.technologys)
+    }
+    if (this.type_admin === TYPE_ADMIN.EDIT) {
+      result = this.projectService.updateProject(this.project._id, this.form.value, this.project.technologys)
     }
     result.subscribe(response => {
       this.router.navigate(['./admin/projects'])
@@ -168,12 +162,15 @@ export class AdminProjectsComponent implements OnInit {
   }
 
   private buildForm() {
-    this.form = this.formBuilder.group({
-      name: ['', [Validators.required]],
-      description: ['', [Validators.required]],
+    this.form = new FormGroup({
+      'name': new FormControl(null, {
+        validators: [Validators.required]
+      }),
+      'description': new FormControl(
+        null, { validators: [Validators.required] }
+      ),
       image: new FormControl(null, { validators: [Validators.required], asyncValidators: [mimeType] }),
-      url: ['', [Validators.required]]
+      'url': new FormControl(null, { validators: [Validators.required] })
     })
   }
-
 }

@@ -39,23 +39,14 @@
       <div class="row">
         <div class="col-md-7">
           <mat-chip-list #chipList aria-label="Technologys selecction">
-            <mat-chip
-              *ngFor="let technology of project.technologys"
-              [selectable] = "selectable"
-              [removable]  = "removable"
-              (removed)="remove(technology)"
-            >
+            <mat-chip *ngFor="let technology of project.technologys" [selectable]="selectable" [removable]="removable"
+              (removed)="remove(technology)">
               {{technology.name}}
               <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
             </mat-chip>
-            <input
-              placeholder="Technologys"
-              #technologyInput
-              [formControl] = "technologyCtrl"
-              [matChipInputFor]="chipList"
-              [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
-              (matChipInputTokenEnd)="addTechnology($event)"
-            >
+            <input placeholder="Technologys" #technologyInput [formControl]="technologyCtrl"
+              [matChipInputFor]="chipList" [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+              (matChipInputTokenEnd)="addTechnology($event)">
           </mat-chip-list>
           <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
             <mat-option *ngFor="let technology of filteredTechnologys | async" [value]="technology">

@@ -33,12 +33,35 @@ export class ProjectsService {
     })
   }
 
+  getProject(_id: string) {
+    return ProjectsService.projects.find(prj => prj._id === _id)
+  }
+
   createProject(project: Project, technologys: Technology[]) {
     let technologysProject = this.createTechnologyInput(technologys)
 
     const postData = new FormData()
     postData.append("query", `mutation{
       createProject(projectInput: {name: "${project.name}", description: "${project.description}", image: "${project.image}", url: "${project.url}",technologys:${JSON.stringify(technologysProject)}}),
+      {
+        _id
+      }
+    }
+    `)
+    postData.append("image", project.image)
+
+    return this.http.post<any>(URL, postData)
+  }
+
+  updateProject(_id: String, project: Project, techologys: Technology[]) {
+    let technologysProject = this.createTechnologyInput(techologys)
+
+    console.log('Project on service:');
+    console.log(project);
+
+    const postData = new FormData()
+    postData.append("query", `mutation{
+      updateProject(projectInput: {_id: "${_id}", name: "${project.name}", description: "${project.description}", image: "${project.image}", url: "${project.url}",technologys:${JSON.stringify(technologysProject)}}),
       {
         _id
       }
