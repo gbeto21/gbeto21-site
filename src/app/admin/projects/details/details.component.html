@@ -1,0 +1,17 @@
+<a mat-button color="primary" routerLink="/admin/projects">Atras</a>
+<div *ngIf="project">
+  <div>
+    <ul>
+      <li>Name: {{project.name}}</li>
+      <li>URL: {{project.url}}</li>
+    </ul>
+    <p>Technologys: </p>
+    <ul>
+      <li *ngFor="let technology of project.technologys">{{technology.name}}</li>
+    </ul>
+    <div class="image-preview">
+      <img [src]="project.image" [alt]="project.name">
+    </div>
+    <p>{{project.description}}</p>
+  </div>
+</div>
