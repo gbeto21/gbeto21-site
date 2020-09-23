@@ -1,0 +1,14 @@
+<div class="overlay"></div>
+<ngb-carousel *ngIf="images">
+  <ng-template ngbSlide *ngFor="let image of images">
+    <div class="picsum-img-wrapper">
+      <img [src]="image.source" alt="Laptop">
+    </div>
+  </ng-template>
+</ngb-carousel>
+<div class="titleMessage">
+  <div class="heading">
+    <p class="main">ALBERTO GONZÁLEZ</p>
+    <span class="typed-element sub"></span>
+  </div>
+</div>

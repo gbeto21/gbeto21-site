@@ -2,6 +2,7 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+app-root {margin: 0;}
 
 mat-form-field,
 textarea {
@@ -24,3 +25,15 @@ input[type="file"]{
 .image-preview img{
   height: 100%;
 }
+
+.carousel-inner,
+.carousel-item{
+  height: 100% !important;
+  width: 100% !important;
+  margin: 0 !important;
+}
+
+.carousel-indicators{
+  display: none;
+}
+
