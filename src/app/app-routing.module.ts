@@ -3,38 +3,26 @@ import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 
 import { AdminGuard } from "./admin.guard";
 import { HomeComponent } from "./home/home.component";
+import { AboutComponent } from "./about/about.component";
+import { SkillComponent } from "./skill/skill.component";
+import { PortfolioComponent } from './portfolio/portfolio.component';
 
 const routes: Routes = [
   {
     path: '',
     component: HomeComponent,
-    //   children: [
-    //     {
-    //       path: '',
-    //       redirectTo: '/home',
-    //       pathMatch: 'full',
-    //     },
-    //     {
-    //       path: 'home',
-    //       loadChildren: () => import('./home/home.module').then(m => m.HomeModule)
-    //     },
-    //     {
-    //       path: 'products',
-    //       loadChildren: () => import('./product/product.module').then(m => m.ProductModule)
-    //     },
-    //     {
-    //       path: 'contact',
-    //       loadChildren: () => import('./contact/contact.module').then(m => m.ContactModule)
-    //     },
-    //     {
-    //       path: 'order',
-    //       loadChildren: () => import('./order/order.module').then(m => m.OrderModule)
-    //     },
-    //     {
-    //       path: 'demo',
-    //       loadChildren: () => import('./demo/demo.module').then(m => m.DemoModule)
-    //     },
-    //   ]
+  },
+  {
+    path: 'about',
+    component: AboutComponent,
+  },
+  {
+    path: 'skill',
+    component: SkillComponent,
+  },
+  {
+    path: 'portfolio',
+    component: PortfolioComponent,
   },
   {
     path: 'admin',
@@ -44,11 +32,7 @@ const routes: Routes = [
   {
     path: 'login',
     loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
-  },
-  // {
-  //   path: '**',
-  //   loadChildren: () => import('./page-not-found/page-not-found.module').then(m => m.PageNotFoundModule)
-  // },
+  }
 ];
 
 @NgModule({

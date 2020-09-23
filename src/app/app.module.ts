@@ -11,13 +11,20 @@ import { CoreModule } from "./core/core.module";
 import { AuthInterceptor } from './core/interceptors/auth-interceptor';
 import * as fromApp from "./store/app.reducer";
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { MaterialModule } from "./material/material.module";
 
 import { HomeComponent } from './home/home.component';
+import { AboutComponent } from './about/about.component';
+import { SkillComponent } from './skill/skill.component';
+import { PortfolioComponent } from './portfolio/portfolio.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
+    AboutComponent,
+    SkillComponent,
+    PortfolioComponent,
   ],
   imports: [
     BrowserModule,
@@ -29,7 +36,8 @@ import { HomeComponent } from './home/home.component';
     StoreModule.forRoot(
       fromApp.appReducer
     ),
-    NgbModule
+    NgbModule,
+    MaterialModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
