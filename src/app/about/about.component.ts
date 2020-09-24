@@ -1,6 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
+import { environment } from "src/environments/environment";
+
+const URLIMAGES = `${environment.apiUrl}/images`
 
 @Component({
   selector: 'app-about',
@@ -28,6 +31,10 @@ export class AboutComponent {
       ];
     })
   );
+  image = `${URLIMAGES}/me.jpg`
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
+  ngOnInit(): void {
+  }
+
+  constructor(private breakpointObserver: BreakpointObserver) { }
 }
