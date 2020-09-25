@@ -14,7 +14,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MaterialModule } from "./material/material.module";
 
 import { HomeComponent } from './home/home.component';
-import { AboutComponent } from './about/about.component';
+import { AboutComponent } from './about/about/about.component';
 import { SkillComponent } from './skill/skill.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { MatGridListModule } from '@angular/material/grid-list';
@@ -29,10 +29,10 @@ import { LayoutComponent } from './layout/layout.component';
   declarations: [
     AppComponent,
     HomeComponent,
-    AboutComponent,
+    //AboutComponent,
     SkillComponent,
     PortfolioComponent,
-    LayoutComponent,
+    //LayoutComponent,
   ],
   imports: [
     BrowserModule,
