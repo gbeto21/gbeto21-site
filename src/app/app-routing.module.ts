@@ -3,8 +3,6 @@ import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 
 import { AdminGuard } from "./admin.guard";
 import { HomeComponent } from "./home/home.component";
-import { AboutComponent } from "./about/about/about.component";
-import { SkillComponent } from "./skill/skill.component";
 import { PortfolioComponent } from './portfolio/portfolio.component';
 
 const routes: Routes = [
@@ -14,12 +12,7 @@ const routes: Routes = [
   },
   {
     path: 'about',
-    // component: AboutComponent,
     loadChildren: () => import("./about/about.module").then(m => m.AboutModule)
-  },
-  {
-    path: 'skill',
-    component: SkillComponent,
   },
   {
     path: 'portfolio',

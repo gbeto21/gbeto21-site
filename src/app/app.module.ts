@@ -14,8 +14,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MaterialModule } from "./material/material.module";
 
 import { HomeComponent } from './home/home.component';
-import { AboutComponent } from './about/about/about.component';
-import { SkillComponent } from './skill/skill.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
@@ -23,16 +21,12 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { LayoutModule } from '@angular/cdk/layout';
-import { LayoutComponent } from './layout/layout.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    //AboutComponent,
-    SkillComponent,
     PortfolioComponent,
-    //LayoutComponent,
   ],
   imports: [
     BrowserModule,

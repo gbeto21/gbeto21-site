@@ -36,3 +36,7 @@ input[type="file"]{
 .carousel-indicators{
   display: none;
 }
+
+.about-mat-card{
+  margin: 1.5rem;
+}

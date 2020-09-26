@@ -1,0 +1,13 @@
+<mat-card class="about-mat-card">
+  <mat-card-content>
+    <mat-grid-list cols="2" rowHeight="250px">
+      <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig"
+        (init)="slickInit($event)" (breakpoint)="breakpoint($event)" (afterChange)="afterChange($event)"
+        (beforeChange)="beforeChange($event)">
+        <div ngxSlickItem *ngFor="let slide of slides" class="slide" dir="rtl">
+          <img src="http://localhost:5000/images/me.jpg" alt="" width="100px" height="100px">
+        </div>
+      </ngx-slick-carousel>
+    </mat-grid-list>
+  </mat-card-content>
+</mat-card>
