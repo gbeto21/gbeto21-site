@@ -25,7 +25,6 @@ h1 strong {
   letter-spacing: .3rem;
 }
 
-
 .mat-card{
   margin: 1.5rem;
 }
@@ -36,11 +35,11 @@ h1 strong {
   z-index: 1;
 }
 
-.about-contaner{
+.about-container{
   display: block;
 }
 
 .about-image{
   border: 1.5px solid #026fff;
-  max-width: 65%;
+  max-width: 40%;
 }

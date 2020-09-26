@@ -16,6 +16,7 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { MatMenuModule } from '@angular/material/menu';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { MatTabsModule } from '@angular/material/tabs';
 
 @NgModule({
   declarations: [],
@@ -36,7 +37,8 @@ import { MatGridListModule } from '@angular/material/grid-list';
     MatAutocompleteModule,
     FlexLayoutModule,
     MatMenuModule,
-    MatGridListModule
+    MatGridListModule,
+    MatTabsModule
   ],
   exports: [
     MatSidenavModule,
@@ -54,7 +56,8 @@ import { MatGridListModule } from '@angular/material/grid-list';
     MatAutocompleteModule,
     FlexLayoutModule,
     MatMenuModule,
-    MatGridListModule
+    MatGridListModule,
+    MatTabsModule
   ]
 })
 export class MaterialModule { }
