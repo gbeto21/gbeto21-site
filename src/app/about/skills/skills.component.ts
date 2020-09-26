@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Skill } from 'src/app/core/models/skill.model';
+import { SkillsService } from 'src/app/core/services/skills/skills.service';
 
 @Component({
   selector: 'app-skills',
@@ -7,49 +9,53 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SkillsComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
-  title = 'ngSlick';
-
-  slides = [
-    { img: "http://placehold.it/350x150/000000" },
-    { img: "http://placehold.it/350x150/111111" },
-    { img: "http://placehold.it/350x150/333333" },
-    { img: "http://placehold.it/350x150/666666" }
-  ]
+  skills: Skill[] = []
 
   slideConfig = {
-    "slidesToShow": 2,
+    "slidesToShow": 3,
     "slidesToScroll": 1,
     "nextArrow": "<div class='nav-btn next-slide'></div>",
     "prevArrow": "<div class='nav-btn prev-slide'></div>",
     "dots": true,
     "infinite": false,
-    "variableWidth": false,
-    centerMode: false,
-    centerPadding: '60px',
-    autoplay: true,
-    autoplaySpeed: 2000,
-    rtl: true
+    "variableWidth": true,
+    "centerMode": false,
+    "centerPadding": '60px',
+    "autoplay": true,
+    "autoplaySpeed": 2000,
+    // rtl: true
   };
 
+  constructor(private skillService: SkillsService) { }
+
+  ngOnInit(): void {
+    this.fetchSkills()
+    // this.slideConfig.slidesToShow = this.skills.length
+  }
+
+  private fetchSkills() {
+    this.skillService
+      .getSkills()
+      .subscribe(response => {
+        this.skills = response.data.skills
+        console.log(this.skills);
+      })
+  }
+
   slickInit(e) {
-    console.log('slick initialized');
+    // console.log('slick initialized');
   }
 
   breakpoint(e) {
-    console.log('breakpoint');
+    // console.log('breakpoint');
   }
 
   afterChange(e) {
-    console.log('afterChange');
+    // console.log('afterChange');
   }
 
   beforeChange(e) {
-    console.log('beforeChange');
+    // console.log('beforeChange');
   }
 
 }

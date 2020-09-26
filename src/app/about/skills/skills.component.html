@@ -4,8 +4,8 @@
       <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig"
         (init)="slickInit($event)" (breakpoint)="breakpoint($event)" (afterChange)="afterChange($event)"
         (beforeChange)="beforeChange($event)">
-        <div ngxSlickItem *ngFor="let slide of slides" class="slide" dir="rtl">
-          <img src="http://localhost:5000/images/me.jpg" alt="" width="100px" height="100px">
+        <div ngxSlickItem *ngFor="let skill of skills" class="slide">
+          <app-skill [skill]=skill></app-skill>
         </div>
       </ngx-slick-carousel>
     </mat-grid-list>
