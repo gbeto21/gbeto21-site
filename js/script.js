@@ -49,12 +49,14 @@ $(document).ready(function () {
         if (window.pageYOffset > skillsTopOffset - $(window).height() + 200) {
             $('.chart').easyPieChart({
                 easing: 'easeInOut',
-                barColor: '#FFF',
+                // barColor: '#FFF',
+                barColor: '#5882FA',
                 trackColor: false,
                 scaleColor: false,
                 lineWidth: 4,
                 size: 152,
                 onStep: function (from, to, percent) {
+                  console.log('OnStep.');
                     $(this.el).find('.percent').text(Math.round(percent))
                 }
             });

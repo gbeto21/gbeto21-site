@@ -9,9 +9,17 @@ import { LayoutComponent } from "../layout/layout.component";
 import { IntroduceComponent } from './introduce/introduce.component';
 import { SkillComponent } from "./skill/skill.component";
 import { SkillsComponent } from './skills/skills.component';
+import { EasyPieChartDirective } from './skill/easy-pie-chart.directive';
 
 @NgModule({
-  declarations: [AboutComponent, LayoutComponent, IntroduceComponent, SkillComponent, SkillsComponent],
+  declarations: [
+    AboutComponent,
+    LayoutComponent,
+    IntroduceComponent,
+    SkillComponent,
+    SkillsComponent,
+    EasyPieChartDirective
+  ],
   imports: [
     CommonModule,
     AboutRoutingModule,
