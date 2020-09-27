@@ -1,4 +1,42 @@
-h2, p{
-  margin: 1rem;
+h2{
+  color: #026fff;
 }
 
+p{
+  margin: 1rem;
+  font-size: 1.2rem;
+}
+
+.skill {
+  width: 13rem;
+  height: 13rem;
+  border: gainsboro 1px solid;
+  text-align: center;
+  margin: 0 2rem;
+}
+
+.chart{
+  position: relative;
+  width: 5rem;
+  height: 5rem;
+  display: inline-block;
+  text-align: center;
+}
+
+.chart canvas {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.chart .percent{
+  color: #026fff;
+  line-height: 5rem;
+  display: inline-block;
+  font-weight: bold;
+  font-size: 1.7rem;
+}
+
+.chart .percent:after{
+  content: '%';
+}
