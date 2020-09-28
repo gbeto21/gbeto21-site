@@ -3,7 +3,6 @@ import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 
 import { AdminGuard } from "./admin.guard";
 import { HomeComponent } from "./home/home.component";
-import { PortfolioComponent } from './portfolio/portfolio.component';
 
 const routes: Routes = [
   {
@@ -16,7 +15,7 @@ const routes: Routes = [
   },
   {
     path: 'portfolio',
-    component: PortfolioComponent,
+    loadChildren: () => import('./portfolio/portfolio.module').then(m => m.PortfolioModule)
   },
   {
     path: 'admin',

@@ -5,26 +5,24 @@ import { MaterialModule } from "../material/material.module";
 
 import { AboutRoutingModule } from './about-routing.module';
 import { AboutComponent } from "./about/about.component";
-import { LayoutComponent } from "../layout/layout.component";
-import { FooterComponent } from "../footer/footer.component";
 import { IntroduceComponent } from './introduce/introduce.component';
 import { SkillComponent } from "./skill/skill.component";
 import { SkillsComponent } from './skills/skills.component';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
     AboutComponent,
-    LayoutComponent,
     IntroduceComponent,
     SkillComponent,
-    SkillsComponent,
-    FooterComponent
+    SkillsComponent
   ],
   imports: [
     CommonModule,
     AboutRoutingModule,
     MaterialModule,
-    SlickCarouselModule
+    SlickCarouselModule,
+    SharedModule
   ]
 })
 export class AboutModule { }
