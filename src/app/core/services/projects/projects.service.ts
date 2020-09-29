@@ -15,10 +15,16 @@ export class ProjectsService {
 
   constructor(private http: HttpClient) { }
 
-  getProjects() {
+  getProjects(technologys?: [Technology]) {
+
+    let paramsTechnologys: String = ''
+    if (technologys && technologys.length > 0) {
+      paramsTechnologys = this.convertTechologysToObjects(technologys)
+    }
+
     return this.http.post<any>(URL, {
       "query": `query{
-        projects{
+        projects${paramsTechnologys}{
           _id
           name
           description
@@ -89,5 +95,26 @@ export class ProjectsService {
     })
 
     return inputTechnologys
+  }
+
+  private convertTechologysToObjects(technologys?: [Technology]) {
+
+    let technologysString: string = '(technologys:['
+    technologys.map(tech => {
+      technologysString += this.technologyToString(tech) + ','
+    })
+    technologysString = technologysString.substring(0, technologysString.length - 1)
+    return `${technologysString}])`
+  }
+
+  private technologyToString(technology) {
+    var str = '';
+    for (var k in technology) {
+      if (technology.hasOwnProperty(k)) {
+        str += ` ${k}:"${technology[k]}",`
+      }
+    }
+    str = str.substring(0, str.length - 1)
+    return `{${str}}`;
   }
 }
