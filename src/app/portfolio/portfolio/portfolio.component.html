@@ -1,5 +1,18 @@
-<div class="background">
-  <app-header></app-header>
-  <p>portfolio works!</p>
-  <app-footer></app-footer>
-</div>
+<mat-form-field>
+  <mat-label>Technologys</mat-label>
+  <mat-select [formControl]="technologysControl" multiple>
+    <mat-select-trigger>
+      <mat-chip-list>
+        <mat-chip *ngFor="let technology of technologysControl.value" [removable]="true"
+          (removed)="onTechnologyRemoved(technology)">
+          {{ technology.name }}
+          <mat-icon matChipRemove>cancel</mat-icon>
+        </mat-chip>
+      </mat-chip-list>
+    </mat-select-trigger>
+    <mat-option *ngFor="let technology of technologys" [value]="technology">{{technology.name}}</mat-option>
+  </mat-select>
+</mat-form-field>
+
+<br />
+{{ technologysControl.value | json }}
