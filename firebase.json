@@ -1,0 +1,16 @@
+{
+  "hosting": {
+    "public": "dist/gbeto21",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}
