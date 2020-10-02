@@ -16,6 +16,7 @@ p{
 }
 
 .chart{
+  margin-top: 1rem;
   position: relative;
   width: 5rem;
   height: 5rem;
@@ -32,11 +33,23 @@ p{
 .chart .percent{
   color: #026fff;
   line-height: 5rem;
-  display: inline-block;
+  /* display: inline-block; */
   font-weight: bold;
   font-size: 1.7rem;
 }
 
 .chart .percent:after{
   content: '%';
+}
+
+.percent{
+  position: absolute;
+  z-index: 3;
+  padding: 0;
+  margin-top: -5.5rem;
+  margin-left: -.7rem;
+}
+
+h2{
+  margin-top: 1.7rem;
 }

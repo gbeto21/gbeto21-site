@@ -1,7 +1,9 @@
 <div class="skill">
   <span class="chart" data-percent="67">
+    <mat-progress-spinner [value]="skill.percent">
+    </mat-progress-spinner>
     <span class="percent">{{skill.percent}}</span>
-    <canvas height="152" width="152"></canvas>
+    <!-- <canvas height="152" width="152"></canvas> -->
   </span>
   <h2>{{skill.name}}</h2>
   <p>{{skill.description}}</p>
