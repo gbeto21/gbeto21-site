@@ -1,0 +1,11 @@
+img {
+  height: 8rem;
+}
+
+mat-card{
+  margin: .5rem;
+}
+
+.project-card {
+  max-width: 400px;
+}

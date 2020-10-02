@@ -6,3 +6,7 @@ button{
   height: 36px !important;
   margin-left: 1.2rem;
 }
+
+mat-spinner{
+  margin: auto;
+}

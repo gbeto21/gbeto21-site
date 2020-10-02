@@ -7,11 +7,13 @@ import { MaterialModule } from "../material/material.module";
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { SharedModule } from '../shared/shared.module';
 import { PortfolioSectionComponent } from './portfolio-section/portfolio-section.component';
+import { ProjectsComponent } from './projects/projects.component';
 
 @NgModule({
   declarations: [
     PortfolioComponent,
-    PortfolioSectionComponent
+    PortfolioSectionComponent,
+    ProjectsComponent
   ],
   imports: [
     CommonModule,

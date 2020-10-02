@@ -23,5 +23,7 @@
   </mat-card-header>
 
   <mat-card-content>
+    <mat-spinner *ngIf="isLoading"></mat-spinner>
+    <app-projects [projects]="projects"></app-projects>
   </mat-card-content>
 </mat-card>

@@ -16,6 +16,7 @@ export class PortfolioComponent implements OnInit {
   technologysControl = new FormControl([]);
   technologys: Technology[]
   projects: Project[]
+  isLoading = false
 
   constructor(
     private projectService: ProjectsService,
@@ -30,15 +31,17 @@ export class PortfolioComponent implements OnInit {
     const toppings = this.technologysControl.value as Technology[];
     this.removeFirst(toppings, technology);
     this.technologysControl.setValue(toppings);
+    console.log(this.technologysControl.value as Technology[]);
   }
 
   searchProjects() {
+    this.isLoading = true
 
     this.projectService
       .getProjects(this.technologysControl.value)
       .subscribe(response => {
         this.projects = response.data.projects
-        console.log(this.projects);
+        this.isLoading = false
       })
   }
 
