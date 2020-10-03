@@ -33,7 +33,6 @@ p{
 .chart .percent{
   color: #026fff;
   line-height: 5rem;
-  /* display: inline-block; */
   font-weight: bold;
   font-size: 1.7rem;
 }
@@ -52,4 +51,48 @@ p{
 
 h2{
   margin-top: 1.7rem;
+}
+
+@media screen and (max-width: 375px){
+
+  .skill{
+    width: 12rem;
+  }
+
+  h2{
+    font-size: 1.5rem;
+  }
+
+  .percent{
+    font-size: 1.5rem;
+  }
+
+  p{
+    margin: .7rem;
+    font-size: 1rem;
+  }
+
+}
+
+@media screen and (max-width: 320px){
+
+  .skill{
+    width: 10rem;
+    height: 15.3rem;
+    margin: 0 .1rem;
+  }
+
+  h2{
+    font-size: .7rem;
+  }
+
+  .percent{
+    font-size: .7rem;
+  }
+
+  p{
+    margin: .5rem;
+    font-size: .7rem;
+  }
+
 }
