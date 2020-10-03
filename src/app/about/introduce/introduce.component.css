@@ -27,12 +27,12 @@ h1 strong {
 
 .background{
   background-color: gainsboro;
-  height: 100%;
   z-index: 1;
 }
 
 .about-container{
   display: block;
+  /* border: 1px solid springgreen; */
 }
 
 .about-image{
