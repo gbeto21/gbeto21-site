@@ -1,10 +1,29 @@
 img {
   height: 29px;
-  width: 29px;
-  margin: 0 1rem;
+  width: 56px;
+  margin: 0 .2rem;
 }
 
 .footer-container{
   margin: 0 !important;
 }
 
+.col{
+  border: 1px solid dotted !important;
+}
+
+.angular{
+  margin-top: -5px;
+}
+
+.node{
+  margin-top: -9px;
+}
+
+.grapQL{
+  margin-top: -1px;
+}
+
+.mongoDB{
+  margin-top: -4px;
+}
