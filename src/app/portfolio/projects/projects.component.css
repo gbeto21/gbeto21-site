@@ -6,6 +6,27 @@ mat-card{
   margin: .5rem;
 }
 
+.card{
+  width: 18rem;
+}
+
 .project-card {
   max-width: 400px;
+}
+
+@media screen and (max-width: 360px){
+  .card{
+    max-width: 250px;
+  }
+}
+
+@media screen and (max-width: 300px){
+  .card{
+    max-width: 170px;
+  }
+}
+@media screen and (max-width: 225px){
+  .card{
+    max-width: 150px;
+  }
 }
