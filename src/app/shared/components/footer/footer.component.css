@@ -5,6 +5,6 @@ img {
 }
 
 .footer-container{
-  height: 4rem;
+  margin: 0 !important;
 }
 
