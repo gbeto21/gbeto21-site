@@ -32,10 +32,38 @@ h1 strong {
 
 .about-container{
   display: block;
-  /* border: 1px solid springgreen; */
 }
 
 .about-image{
   border: 1.5px solid #026fff;
   max-width: 40%;
+}
+
+@media screen and (max-width: 355px){
+  h1{
+    font-size: 2rem;
+  }
+
+  h2{
+    font-size: 1rem;
+  }
+
+  h4{
+    font-size: 1rem;
+    margin-top: .7rem;
+  }
+}
+
+@media screen and (max-width: 280px){
+  h4{
+    font-size: 1rem;
+  }
+
+  h1{
+    font-size: 1rem;
+  }
+
+  h1 strong{
+    letter-spacing: 0;
+  }
 }

@@ -1,21 +1,18 @@
-<div class="d-flex justify-content-center">
-
-  <label for="" *ngIf="!projects">No projects to show.</label>
-
-  <label for="" *ngIf="projects && projects.length==0">No projects were found.</label>
-
-  <div class="card-deck">
-    <div class="card" *ngFor="let project of projects">
-      <img src={{project.image}} class="card-img-top" alt={{project.name}}>
-      <div class="card-body">
-        <h3 class="card-title">{{project.name}}</h3>
-        <div data-spy="scroll" data-target="#navbar-example2" data-offset="0">
-          <p class="card-text">{{project.description}}</p>
+  <div class="d-flex justify-content-center">
+    <label for="" *ngIf="!projects">No projects to show.</label>
+    <label for="" *ngIf="projects && projects.length==0">No projects were found.</label>
+    <div class="card-deck">
+      <div class="card" *ngFor="let project of projects">
+        <img src={{project.image}} class="card-img-top" alt={{project.name}}>
+        <div class="card-body">
+          <h3 class="card-title">{{project.name}}</h3>
+          <div data-spy="scroll" data-target="#navbar-example2" data-offset="0">
+            <p class="card-text">{{project.description}}</p>
+          </div>
         </div>
-      </div>
-      <div class="card-footer">
-        <a href={{project.url}} class="btn btn-primary">Visit</a>
+        <div class="card-footer">
+          <a href={{project.url}} class="btn btn-primary">Visit</a>
+        </div>
       </div>
     </div>
   </div>
-</div>

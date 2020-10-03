@@ -10,3 +10,7 @@ button{
 mat-spinner{
   margin: auto;
 }
+
+.about-mat-card{
+  min-height: 78%;
+}

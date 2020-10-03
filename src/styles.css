@@ -45,3 +45,7 @@ input[type="file"]{
   background-color: gainsboro;
   z-index: 1;
 }
+
+.page-container{
+  height: 100%;
+}
