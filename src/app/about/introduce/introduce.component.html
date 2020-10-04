@@ -1,9 +1,18 @@
 <mat-card class="about-mat-card">
   <mat-card-content>
     <div class="container">
-      <div class="row">
+      <div class="row align-items-center">
         <div class="col col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 text-center about-container">
           <img class="about-image rounded-circle" [src]="image" alt="photo">
+          <div class="social-container row">
+            <div class="col col-3" *ngFor="let social of socialNetworks">
+              <a [href]="social.url">
+                <img
+                  class="social rounded-circle rounded-circle-xl rounded-circle-lg rounded-circle-md rounded-circle-sm"
+                  [src]="social.src" [alt]="social.name">
+              </a>
+            </div>
+          </div>
         </div>
         <div class="col col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 about-container">
           <h4>Hello!</h4>
