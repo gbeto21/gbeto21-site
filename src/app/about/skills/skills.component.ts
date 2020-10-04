@@ -30,7 +30,6 @@ export class SkillsComponent implements OnInit {
 
   ngOnInit(): void {
     this.fetchSkills()
-    // this.slideConfig.slidesToShow = this.skills.length
   }
 
   private fetchSkills() {
@@ -38,7 +37,6 @@ export class SkillsComponent implements OnInit {
       .getSkills()
       .subscribe(response => {
         this.skills = response.data.skills
-        console.log(this.skills);
       })
   }
 

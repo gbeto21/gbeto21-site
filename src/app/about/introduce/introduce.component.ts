@@ -14,22 +14,22 @@ export class IntroduceComponent implements OnInit {
   socialNetworks = [
     {
       name: 'GitHub',
-      src: `${URLIMAGES}/gitHub.png`,
+      src: `${URLIMAGES}/gitHub.svg`,
       url: `https://github.com/gbeto21`
     },
     {
       name: 'twitter',
-      src: `${URLIMAGES}/twitter.png`,
+      src: `${URLIMAGES}/twitter.svg`,
       url: `https://twitter.com/gbeto21`
     },
     {
       name: 'facebook',
-      src: `${URLIMAGES}/facebook.png`,
+      src: `${URLIMAGES}/facebook.svg`,
       url: `https://www.facebook.com/gbeto21`
     },
     {
       name: 'instagram',
-      src: `${URLIMAGES}/instagram.png`,
+      src: `${URLIMAGES}/instagram.svg`,
       url: `https://www.instagram.com/gbeto21/`
     }
   ]

@@ -46,7 +46,19 @@ h1 strong {
 }
 
 .social{
-  max-width: 110%;
+  max-width: 30%;
+}
+
+@media screen and (max-width: 425px){
+  .social{
+    max-width: 50%;
+  }
+}
+
+@media screen and (max-width: 375px){
+  .social{
+    max-width: 50%;
+  }
 }
 
 @media screen and (max-width: 355px){
@@ -61,6 +73,12 @@ h1 strong {
   h4{
     font-size: 1rem;
     margin-top: .7rem;
+  }
+}
+
+@media screen and (max-width: 320px){
+  .social{
+    max-width: 100%;
   }
 }
 
