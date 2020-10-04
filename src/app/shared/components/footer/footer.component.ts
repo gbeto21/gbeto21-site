@@ -11,6 +11,7 @@ const URLIMAGES = `${environment.apiUrl}/images`
 export class FooterComponent implements OnInit {
 
   angular = `${URLIMAGES}/angular.svg`
+  bootstrap = `${URLIMAGES}/bootstrap.svg`
   node = `${URLIMAGES}/nodejs.svg`
   express = `${URLIMAGES}/expressjs.svg`
   graphql = `${URLIMAGES}/graphql.svg`

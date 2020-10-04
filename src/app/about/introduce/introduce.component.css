@@ -32,11 +32,21 @@ h1 strong {
 
 .about-container{
   display: block;
+  margin-bottom: 7px;
 }
 
 .about-image{
   border: 1.5px solid #026fff;
   max-width: 40%;
+  margin-bottom: 20px;
+}
+
+.social-container{
+  margin-bottom: 6px;
+}
+
+.social{
+  max-width: 110%;
 }
 
 @media screen and (max-width: 355px){
