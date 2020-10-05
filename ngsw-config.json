@@ -26,5 +26,19 @@
         ]
       }
     }
+  ],
+  "dataGroups": [
+    {
+      "name": "api",
+      "urls": [
+        "https://gbeto21-api.herokuapp.com/**"
+      ],
+      "cacheConfig": {
+        "maxSize": 2,
+        "maxAge": "20m",
+        "strategy": "freshness",
+        "timeout": "2s2u"
+      }
+    }
   ]
 }
