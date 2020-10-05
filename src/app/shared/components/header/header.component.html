@@ -1,8 +1,8 @@
 <mat-toolbar color="primary">
   <span class="fill-remaining-space"></span>
   <div fxLayout="row" fxShow="false" fxShow.gt-sm>
-    <button mat-button routerLink="/about">About</button>
-    <button mat-button routerLink="/portfolio">Portfolio</button>
+    <button mat-button routerLink="/about" routerLinkActive="mat-accent">About</button>
+    <button mat-button routerLink="/portfolio" routerLinkActive="mat-accent">Portfolio</button>
   </div>
   <button mat-button [mat-menu-trigger-for]="menu" fxHide="false" fxHide.gt-sm>
     <mat-icon>menu</mat-icon>

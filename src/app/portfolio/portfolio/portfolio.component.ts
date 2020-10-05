@@ -36,7 +36,7 @@ export class PortfolioComponent implements OnInit {
 
   searchProjects() {
     this.isLoading = true
-
+    this.projects = []
     this.projectService
       .getProjects(this.technologysControl.value)
       .subscribe(response => {
