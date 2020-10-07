@@ -1,15 +1,17 @@
 h2{
   color: #026fff;
+  margin-top: 1rem;
+  margin-bottom: .3rem;
 }
 
 p{
-  margin: 1rem;
-  font-size: 1.2rem;
+  margin: 0 1rem 1rem 1rem;
+  font-size: 1rem;
 }
 
 .skill {
   width: 13rem;
-  height: 13rem;
+  height: 14rem;
   border: gainsboro 1px solid;
   text-align: center;
   margin: 0 2rem;
@@ -49,10 +51,6 @@ p{
   margin-left: -.7rem;
 }
 
-h2{
-  margin-top: 1.7rem;
-}
-
 @media screen and (max-width: 375px){
 
   .skill{
@@ -60,7 +58,7 @@ h2{
   }
 
   h2{
-    font-size: 1.5rem;
+    font-size: 1.4rem;
   }
 
   .percent{
@@ -69,7 +67,7 @@ h2{
 
   p{
     margin: .7rem;
-    font-size: 1rem;
+    font-size: .9rem;
   }
 
 }
@@ -78,12 +76,12 @@ h2{
 
   .skill{
     width: 10rem;
-    height: 15.3rem;
+    height: 13.55rem;
     margin: 0 .1rem;
   }
 
   h2{
-    font-size: .7rem;
+    font-size: 1.1rem;
   }
 
   .percent{
