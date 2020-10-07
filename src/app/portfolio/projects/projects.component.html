@@ -11,7 +11,7 @@
           </div>
         </div>
         <div class="card-footer">
-          <a href={{project.url}} class="btn btn-primary">Visit</a>
+          <a href={{project.url}} class="btn btn-primary" *ngIf="project.url">Visit</a>
         </div>
       </div>
     </div>
