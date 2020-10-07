@@ -15,12 +15,12 @@ const URLIMAGES = `${environment.apiUrl}/images`
 })
 export class HomeComponent implements OnInit {
 
-  //strings = []
   types = []
   images = [
     { 'source': `${URLIMAGES}/slide1.jpg` },
     { 'source': `${URLIMAGES}/slide2.jpg` },
-    { 'source': `${URLIMAGES}/slide3.jpg` }
+    { 'source': `${URLIMAGES}/slide3.jpg` },
+    { 'source': `${URLIMAGES}/slide4.jpg` }
   ];
 
   constructor(
