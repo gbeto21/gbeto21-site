@@ -8,7 +8,7 @@
             <mat-chip *ngFor="let technology of technologysControl.value" [removable]="true"
               (removed)="onTechnologyRemoved(technology)">
               {{ technology.name }}
-              <mat-icon matChipRemove>cancel</mat-icon>
+              <!-- <mat-icon matChipRemove>cancel</mat-icon> -->
             </mat-chip>
           </mat-chip-list>
         </mat-select-trigger>
